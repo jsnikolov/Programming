@@ -1,27 +1,27 @@
-using System;
-using System.IO;
- 
-    class ReadTextFileAndPrintOddLines
+https://github.com/fast4y/TelerikAcademy/blob/master/CSharp%20Part2/C2-2-MultiDimensionalArrays-Homework/01.%20Print4TypesOfMatrix/Print4TypesOfMatrix.cs
+
+ private static void PrintType3(int n)
     {
-        //The file sample.txt is in directory bin/Debug
-        static void Main(string[] args)
+        int[,] matrix = new int[n, n];
+        int counter = 0;
+        for (int diagonal = 1; diagonal <= n*2 - 1; diagonal++)
         {
-            StreamReader reader = new StreamReader("sample.txt");
-            using (reader)
+            int col = 0;
+            int row = n - diagonal;
+            int cellstofill = diagonal;
+            if (cellstofill>n)
             {
-                int lineNumber = 1;
-                string line = reader.ReadLine();
- 
-                while (line != null)
-                {
-                    if (lineNumber % 2 == 1)
-                    {
-                        Console.WriteLine(line);
-                    }
-                    line = reader.ReadLine();
-                    lineNumber++;
-                }
+                cellstofill = 2 * n - cellstofill;
+                col = diagonal - n;
+                row = 0;
             }
-            Console.WriteLine("Done!");
+            for (int action = 0; action < cellstofill; action++)
+            {
+                counter++;
+                matrix[row, col] = counter;
+                row++;
+                col++;
+            }
         }
+        ShowMatrix(matrix);
     }
