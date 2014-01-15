@@ -1,0 +1,77 @@
+﻿html, body, form, h1, ul, li, p, img, input {
+    margin:0;
+    padding:0;
+}
+body {
+    font: normal 62.5% Arial, Verdana, Thoma, sans-serif;
+}
+ul, li {
+    list-style: none;
+}
+img {
+    border: none;
+}
+input {
+    border: 0;
+}
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+body form.categories {
+    width:400px;
+    margin: 50px auto;
+    padding:10px 10px 30px;
+    background:#ddd;
+    border-radius:7px;
+}
+h1 {
+    margin-top:5px;
+    font-size:1.4em;
+    font-weight:normal;
+}
+body form.categories ul li {
+    margin-top:36px;
+    border:1px solid #999;
+    background:#fff;
+    position:relative;
+}
+body form.categories ul li img {
+    margin:15px;
+    border:1px solid #999;
+    float:left;
+}
+body form.categories ul li p{
+    padding:15px 30px 45px 0;
+    color:#000;
+    font-size:1.2em;
+}
+body form.categories ul li span.buttons{
+    height:25px;
+    margin-top:15px;
+    display:inline-block;
+    position:absolute;
+    right:15px;
+    bottom:15px;
+}
+body form.categories ul li span span.left{
+    height:25px;
+    padding-left:16px;
+    background:url(../images/button-tile-left.png) no-repeat 0 0;
+    display:inline-block;
+}
+body form.categories ul li span span.right{
+    height:25px;
+    padding-right:2px;
+    background:url(../images/button-tile-right.png) no-repeat right 0;
+    display:inline-block;
+}
+body form.categories ul li span input{
+    max-width:90px;
+    height:100%;
+    padding:0 16px 0 6px;
+    background:url(../images/button-tile-middle.png) repeat-x;
+    color:#fff;
+    cursor:pointer;
+}
