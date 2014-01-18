@@ -1,31 +1,31 @@
 if(((rows&1) === 0) && ((i&1) === 0) && ((innerLength&1) === 0))
 {
-	row++;    
+	newRow++;    
 } 
 else if(((rows&1) !== 0) && ((i&1) === 0) && ((innerLength&1) !== 0))
 {
-	row++;
+	newRow++;
 }
 if(((rows&1) === 0) && ((i&1) == 0) && ((innerLength&1) != 0))
 {
-	row--;    
+	newRow--;    
 } 
 else if(((rows&1) !== 0) && ((i&1) === 0) && ((innerLength&1) === 0))
 {
-	row--;
+	newRow--;
 }             
 if(((rows&1) === 0) && ((i&1) != 0) && ((innerLength&1) == 0)){
-	col--;    
+	newCol--;    
 } 
 else if(((rows&1) !== 0) && ((i&1) !== 0) && ((innerLength&1) !== 0))
 {
-	col--;
+	newCol--;
 }              
 if(((rows&1) === 0) && ((i&1) != 0) && ((innerLength&1) != 0))
 {
-	col++;
+	newCol++;
 } 
 else if(((rows&1) !== 0) && ((i&1) !== 0) && ((innerLength&1) === 0))
 {
-	col++;
+	newCol++;
 }
