@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Chars</title>
+<style>
+html, body, h1, div, form, input, select, a, table, tr, td, label{
+	margin:0;
+	padding:0;
+	outline:0;
+}
+body{
+	font: 62.5% Verdana;
+}
+h1{
+	margin:25px 0 0 25px;
+	float:left;
+}
+#wrapper{
+	margin:15px auto 0;
+	width:500px;
+}
+#form-holder{
+	padding: 3px;
+	border:1px solid #cdcdcd;
+}
+#form{
+	padding:5px;
+	background-color:#ededed;
+	font-size:1.5em;
+	font-weight:bold;
+	font-style:italic;
+	text-align:right;
+}
+#form input, #form select{
+	margin:0 0 5px 5px;
+	width:100px;
+}
+#form select{
+	width:104px;
+}
+#table{
+	width:100%;
+	margin-top:15px;
+	border-collapse: collapse;
+	display:none;
+}
+#run{
+	width:93px;
+	height:20px;
+	padding:0 5px;
+	color:#000;
+	text-align:center;
+	text-decoration:none;
+	background-color:#bcbcbc;
+	border:1px outset #ccc;
+	border-radius:3px;
+	font-style:normal;
+	display:inline-block;
+}
+
+#run:hover{
+	background-color:#ccc;
+	border:1px outset #bcbcbc;
+}
+#table thead{
+	font-size:3em;
+}
+#table-body tr:nth-child(2n-1){
+	background-color:#ededed;
+}
+#table-body tr td{
+	font-size:5em;
+	vertical-align:middle;
+}
+#table-body tr td.index{
+	width:80px;
+	font-size:20px;
+	text-align:center;
+}
+#wrong-msg{
+	color:red;
+	display:none;
+}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="form-holder">
+			<form id="form">
+				<h1>Char map</h1>
+				<label for="start">Start</label>
+				<input type="text" id="start" class="input-values" placeholder="0"/></br>
+				<label for="end">End</label>
+				<input type="text" id="end" class="input-values" placeholder="255"/></br>
+				<label for="choose-font">Choose Font</label>
+				<select id="choose-font" class="input-values" >
+					<option value="SP WingDings">WingDings</option>
+					<option value="Arial">Arial</option>
+				</select></br>
+				<a href="#" id="run">Run</a>
+			</form>
+		</div>
+		<div id="wrong-msg">The values can be 0 or bigger and end value have to be bigger than start value</div>
+		<table id="table" border="1" >
+			<thead>
+			<tr>
+				<th>Index</th>
+				<th>Simbol</th>
+			</tr>
+			</thead>
+			<tbody  id="table-body"></tbody>
+		</table>
+	</div>
+<script>
+	window.onload = function(){
+		document.getElementById("start").value = '';
+		document.getElementById("end").value = '';
+		//document.getElementById("start").placeholder = 'Enter start value';
+		//document.getElementById("end").placeholder = 'Enter end value';
+	}
+	
+	function StringBuilder(param/*startIndex, endIndex, font*/){
+		var inStart = param[0].value|0;
+		var inEnd = param[1].value|0;
+		var font = param[2].value;
+		
+		var arr = [];
+		var start;
+		var end;
+		var i;
+		if((!inStart) || (!inEnd))
+		{
+			start = 0;
+			end = 255;
+		}
+		else if( (inStart < 0) || (inEnd < 0) || (inEnd <= inStart)){
+			return -1;
+		}
+		else
+		{
+			start = inStart;
+			end = inEnd;
+		}
+		for(i = start; i < end+1; i++)
+		{
+			arr.push('<tr><td class="index">'  + i + '</td><td style="font-family:' + font + ';">&#' + i + '</td></tr>');
+		}
+		var resultString = arr.join("");
+		return resultString;
+	}
+	
+	function Print(element, html){
+		element.innerHTML = html;
+	}
+</script>
+<script> 
+	var run = document.getElementById("run");
+	run.addEventListener("click", Main, false);
+		function Main(){
+			var inputValues = document.getElementsByClassName("input-values");
+			var wrongMsg = document.getElementById("wrong-msg");
+			wrongMsg.style.display = "none";
+			var table = document.getElementById("table");
+			table.style.display = "none";
+			var tableBody = document.getElementById("table-body");
+			
+			var html = StringBuilder(inputValues);
+			if(html === -1){
+				wrongMsg.style.display = "block";
+				return;
+			}
+			Print(tableBody, html);
+			table.style.display = "table";
+		}
+</script>
+</body>
+</html>
