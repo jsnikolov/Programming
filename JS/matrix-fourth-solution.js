@@ -58,5 +58,7 @@ function RoundMatrix()
 		{
 			console.log(arr[i]);
 		}
-		
-    }
+    };
+
+
+RoundMatrix();
