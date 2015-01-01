@@ -1,0 +1,16 @@
+﻿#header, #main, #footer {
+    background:url(../images/IE/site-bg.png);
+}
+#nav, #content section.notes {
+    background: url(../images/IE/nav-bg.png);
+}
+#nav > ul li > ul {
+    background: url(../images/IE/drop-down-bg.png);
+}
+#nav > ul li > ul > li > a {
+    -ms-zoom: 1;
+    zoom: 1;
+}
+#nav > ul li > ul > li:hover {
+    background: #626e13;
+}

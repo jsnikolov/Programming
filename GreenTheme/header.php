@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]>
+<html class="ie ie7" <?php language_attributes(); ?> >
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" <?php language_attributes(); ?> >
+<![endif]-->
+<html <?php language_attributes(); ?>>
+<head>
+	<title><?php bloginfo('name'); ?><?php wp_title( '|', true, 'left' ); ?></title>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
+	<meta name="keywords" content="литература, разкази, поезия, проза, роман, книги, писатели, муза, автори, читалня, библиотека, книжарница, цитати, откъси, коментари, новини, култура, фейсбук" />
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/dvatabuka.ico" />
+	<!--[if lt IE 9]>
+        <script src="<?php echo get_template_directory_uri();?>/script/IE9.js"></script>
+    <![endif]-->
+<?php wp_head(); ?>
+</head>
+<body>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '727236860684064',
+	      xfbml      : true,
+	      version    : 'v2.1'
+	    });
+	  };
+	
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/bg_BG/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	<div id="wrapper">
+		<header id="header">
+			<div>
+				<section id="logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+						title="Двата бука"> <img
+						src="<?php echo get_template_directory_uri(); ?>/images/logo-dvata-buka.png"
+						width="195" height="110" alt="logo" />
+						<h1>Двата бука</h1>
+					</a>
+				</section>
+				<div id="fb-root"></div>
+				<div id="like-button-holder" style="position:absolute; top:80px; left:795px;">
+					<div class="fb-like" data-href="https://www.facebook.com/pages/%D0%94%D0%B2%D0%B0%D1%82%D0%B0-%D0%B1%D1%83%D0%BA%D0%B0/894297870601791?ref=hl" data-layout="button" data-colorscheme="dark" data-share="false" data-width="450" data-show-faces="false"></div>
+				</div>
+				<div id="search">
+					<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+						<input id="SearchBox" type="search" name="s" placeholder="Търсене..." /> <input
+							id="SearchButton" type="submit" value="" />
+					</form>
+				</div>
+			</div>
+			<nav id="nav">
+				<?php
+					wp_nav_menu ( array (
+										'theme_location' => 'menu',
+										'container' => 'false',
+									) );
+				?>
+			</nav>
+		</header>
+		<div id="main">
