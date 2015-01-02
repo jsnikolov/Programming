@@ -44,10 +44,11 @@
 						src="<?php echo get_template_directory_uri(); ?>/images/logo-dvata-buka.png"
 						width="195" height="110" alt="logo" />
 						<h1>Двата бука</h1>
+						<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</a>
 				</section>
 				<div id="fb-root"></div>
-				<div id="like-button-holder" style="position:absolute; top:80px; left:795px;">
+				<div id="like-button-holder">
 					<div class="fb-like" data-href="https://www.facebook.com/pages/%D0%94%D0%B2%D0%B0%D1%82%D0%B0-%D0%B1%D1%83%D0%BA%D0%B0/894297870601791?ref=hl" data-layout="button" data-colorscheme="dark" data-share="false" data-width="450" data-show-faces="false"></div>
 				</div>
 				<div id="search">

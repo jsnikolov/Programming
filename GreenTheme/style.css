@@ -425,7 +425,7 @@ body #wrapper {
 }
 
 body #wrapper #header {
-	height: 185px;
+	height: 195px;
 	margin-top: 30px;
 }
 
@@ -436,7 +436,6 @@ body #wrapper #header>div {
 }
 
 body #wrapper #header>div #logo {
-	width: 146px;
 	height: 110px;
 	margin-top:-10px;
 }
@@ -449,6 +448,10 @@ body #wrapper #header>div #logo a h1 {
 	display: none;
 }
 
+body #wrapper #header>div #logo a #site-description {
+	font-size:12px;
+}
+
 body #wrapper #header>div #search {
 	width: 160px;
 	height: 20px;
@@ -456,7 +459,7 @@ body #wrapper #header>div #search {
 	border-radius: 5px;
 	background: url(images/search-bg.png) repeat-x;
 	position: absolute;
-	bottom: 10px;
+	bottom: 0;
 	right: 25px;
 }
 
@@ -481,7 +484,14 @@ body #wrapper #header>div #search form #SearchButton {
 	float: right;
 }
 
+body #wrapper #header>div #like-button-holder{
+	position:absolute;
+	top:90px;
+	left:795px;
+}
+
 body #wrapper #header #nav {
+	margin-top:10px;
 	padding: 0 25px;
 	height: 45px;
 	background: rgba(193, 216, 37, 0.7);
