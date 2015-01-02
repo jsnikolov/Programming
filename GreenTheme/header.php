@@ -10,7 +10,7 @@
 	<title><?php bloginfo('name'); ?><?php wp_title( '|', true, 'left' ); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
-	<meta name="keywords" content="литература, разкази, поезия, проза, роман, книги, писатели, муза, автори, читалня, библиотека, книжарница, цитати, откъси, коментари, новини, култура, фейсбук" />
+	<meta name="keywords" content="литература, разкази, поезия, проза, роман, книги, писатели, муза, автори, читалня, библиотека, книжарница, цитати, откъси, коментари, новини, култура, фейсбук, двата бука, dvatabuka" />
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/dvatabuka.ico" />
 	<!--[if lt IE 9]>
         <script src="<?php echo get_template_directory_uri();?>/script/IE9.js"></script>
