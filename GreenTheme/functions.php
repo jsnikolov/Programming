@@ -3,7 +3,7 @@
  * Adding the Open Graph in the Language Attributes
  */
 function add_opengraph_doctype( $output ) {
-	return $output . ' prefix="og: http://ogp.me/ns#"';
+	return $output . ' prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"';
 }
 add_filter('language_attributes', 'add_opengraph_doctype', 10, 1);
 
