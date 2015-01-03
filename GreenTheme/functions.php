@@ -3,7 +3,7 @@
  * Adding the Open Graph in the Language Attributes
  */
 function add_opengraph_doctype( $output ) {
-	return $output . ' xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"';
+	return $output . ' prefix="og: http://ogp.me/ns#"';
 }
 add_filter('language_attributes', 'add_opengraph_doctype', 10, 1);
 
@@ -11,8 +11,11 @@ add_filter('language_attributes', 'add_opengraph_doctype', 10, 1);
  * Adding the Open Graph Meta Info 
  */
 
-function insert_fb_in_head() {
+function insert_meta_info_in_head() {
+	$keywords = 'литература, разкази, поезия, проза, роман, книги, писатели, муза, автори, читалня, библиотека, книжарница, цитати, откъси, коментари, новини, култура, фейсбук, двата бука, dvatabuka';
 	if ( !is_singular()){
+		echo '<meta name="description" content="' . get_bloginfo('description') . '" />';
+		echo '<meta name="keywords" content="'.$keywords.'" />';
 		echo '<meta property="og:site_name" content="' . get_bloginfo('name') . '"/>';
 		echo '<meta property="og:title" content="' . get_bloginfo('name') . '"/>';
 		echo '<meta property="og:url" content="' . get_bloginfo('url') . '/"/>';
@@ -30,14 +33,23 @@ function insert_fb_in_head() {
 							'excerpt'           => $content,
 							'count'				=> 400,
 							'read_more'      	=> '',
-							'end_string_format' => '',
+							'end_string_format' => '...',
 							'p_tag'				=> false,
 							'cpecialchars'		=> true
 					);
 					$excerpt = get_excerpt($args);
 		endwhile;
 		endif;
-		
+
+		echo '<meta name="description" content="' . $excerpt . '"/>';
+		$posttags = get_the_tags();
+		$listOfTags = '';
+		if ($posttags) {
+			foreach($posttags as $tag) {
+				$listOfTags .= $tag->name . ', ';
+			}
+		}
+		echo '<meta name="keywords" content="'. $listOfTags . "двата бука, dvatabuka" . '" />';
 		echo '<meta property="og:site_name" content="' . get_bloginfo('name') . '"/>';
 		echo '<meta property="og:title" content="' . get_the_title() . ' | ' . get_bloginfo('name') . '"/>';
 		echo '<meta property="og:url" content="' . get_permalink() . '/"/>';
@@ -51,7 +63,7 @@ function insert_fb_in_head() {
 		echo '<meta property="fb:app_id" content="727236860684064" />';
 		echo '<meta property="fb:admins" content="1125466857"/>';
 }
-add_action( 'wp_head', 'insert_fb_in_head' );
+add_action( 'wp_head', 'insert_meta_info_in_head' );
 
 /**
 * End Open Graph Attributes

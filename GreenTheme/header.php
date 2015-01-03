@@ -7,10 +7,8 @@
 <![endif]-->
 <html <?php language_attributes(); ?>>
 <head>
-	<title><?php bloginfo('name'); ?><?php wp_title( '|', true, 'left' ); ?></title>
+	<title><?php wp_title( '|', true, 'right' ) . bloginfo('name'); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
-	<meta name="keywords" content="литература, разкази, поезия, проза, роман, книги, писатели, муза, автори, читалня, библиотека, книжарница, цитати, откъси, коментари, новини, култура, фейсбук, двата бука, dvatabuka" />
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/dvatabuka.ico" />
 	<!--[if lt IE 9]>
         <script src="<?php echo get_template_directory_uri();?>/script/IE9.js"></script>
@@ -49,7 +47,7 @@
 				</section>
 				<div id="fb-root"></div>
 				<div id="like-button-holder">
-					<div class="fb-like" data-href="https://www.facebook.com/pages/%D0%94%D0%B2%D0%B0%D1%82%D0%B0-%D0%B1%D1%83%D0%BA%D0%B0/894297870601791?ref=hl" data-layout="button" data-colorscheme="dark" data-share="false" data-width="450" data-show-faces="false"></div>
+					<div class="fb-like" data-href="https://www.facebook.com/dvatabuka" data-layout="button" data-colorscheme="dark" data-share="false" data-width="450" data-show-faces="false"></div>
 				</div>
 				<div id="search">
 					<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
