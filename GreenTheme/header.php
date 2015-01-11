@@ -49,10 +49,10 @@
 				<div id="like-button-holder">
 					<div class="fb-like" data-href="https://www.facebook.com/dvatabuka" data-layout="button" data-colorscheme="dark" data-share="false" data-width="450" data-show-faces="false"></div>
 				</div>
-				<div id="search">
+				<div id="search" class="search">
 					<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-						<input id="SearchBox" type="search" name="s" placeholder="Търсене..." /> <input
-							id="SearchButton" type="submit" value="" />
+						<input class="SearchBox" type="search" name="s" placeholder="Търсене..." /> <input
+							class="SearchButton" type="submit" value="" />
 					</form>
 				</div>
 			</div>

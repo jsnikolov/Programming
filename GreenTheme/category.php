@@ -28,7 +28,7 @@
 							'p_tag'				=>true
 					);
 					echo get_excerpt($args);
-				  //echo get_excerpt(get_the_content(), 850); ?>
+				?>
 			</div>
 			<?php
 				endwhile;
@@ -41,14 +41,14 @@
 	 <div class="container-top-20">
 		<div class="category-title-left">
 			<h3>Още от
-				<em><?php echo get_cat_name($cat); ?></em>
+				<em><?php echo single_cat_title('', false)?></em>
 			</h3>
 		</div>
-		<div id="cat-list">
-			<ul class="list">
+		<div id="">
+			<ul class="">
 				<?php
 					$cat_args = array(
-							'posts_per_page' => 25,
+							//'posts_per_page' => 25,
 							'cat' => $cat,
 							'paged' => $paged,
 					);
@@ -56,8 +56,25 @@
 					if ($list_cat_query->have_posts ()) :
 					while ( $list_cat_query->have_posts () ) :
 					$list_cat_query->the_post ();
+					$post_ID =  get_the_ID();
+					$subtitle = "subtitle";
+					$autor = "autor";
 				?>
-				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+				<li class="container-top-20">
+						<header>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+								<h2><?php the_title(); ?></h2>
+							</a>
+							<h4 class="sub-title"><?php echo get_post_meta($post_ID, $subtitle, true); ?></h4>
+						</header>
+							<div class="autor-date">
+								<span class="autor"><?php echo get_post_meta($post_ID, $autor, true); ?></span>
+								<span class="date"><?php  echo get_the_date('d F Y'); ?></span>
+							</div>
+							<div class="container-top-10">
+								<?php the_excerpt(); ?>
+							</div>
+				</li>
 				<?php
 					endwhile;
 					endif;
@@ -66,7 +83,7 @@
 			</ul>
 			<p class="container-top-20 center-text">
 				<?php
-					$big = 999999999; // need an unlikely integer
+					$big = 999999999;   /* need an unlikely integer*/
 					
 					$args = array(
 					 		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -88,15 +105,14 @@
 			</p>
 		</div>
 	</div>
-</div>
-	<!-- end CONTENT -->
-	<!-- start RIGHT-SIDEBAR -->
+</div><!-- $content -->
+	
 <aside id="sidebar-container">
 <?php
 	get_sidebar();
 ?>
 </aside>
-	<!-- end RIGHT-SIDEBAR -->
+	
 <?php
 get_footer ();
 ?>

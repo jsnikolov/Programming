@@ -37,13 +37,5 @@
 		</div>
 	</div>
 	<?php if(!dynamic_sidebar('right-sidebar')):?>
-		<div class="container-top-15">
-			<div class="category-title-right">
-				<h3>Приятели</h3>
-			</div>
-			<div id="fb-container">
-				<div class="fb-like-box" data-href="https://www.facebook.com/vestniksega" data-width="292" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
-				<div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="292" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
-			</div>
-		</div>	
+		
 	<?php endif;?>

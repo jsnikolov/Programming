@@ -32,15 +32,14 @@
 		endif;
 	?>
 	</article>
-</div>
-	<!-- end CONTENT -->
-	<!-- start RIGHT-SIDEBAR -->
+</div><!-- #content -->
+
 <aside id="sidebar-container">
 <?php
 	get_sidebar();
 ?>
 </aside>
-	<!-- end RIGHT-SIDEBAR -->
+
 <?php
 get_footer ();
 ?>

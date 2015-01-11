@@ -1,4 +1,4 @@
-</div>
+</div><!-- #main -->
 <footer id="footer">
 	<div>
 		<ul>
@@ -28,7 +28,7 @@
 		<p>&copy; 2014</p>
 	</div>
 </footer>
-</div>
+</div><!-- #wrapper -->
     <?php wp_footer(); ?>
 </body>
 </html>

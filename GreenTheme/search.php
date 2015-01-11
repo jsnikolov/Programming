@@ -4,14 +4,15 @@
 	<div class="container-top-20">
 		<div class="category-title-left">
 			<h3>
-				<?php printf( __( 'Резултати от търсенето за: %s', 'Green Theme' ), '<em>' . get_search_query(false) . '</em>'); ?>
+				<?php 
+					$key = get_search_query();
+					printf( __( 'Резултати от търсенето за: %s', 'Green Theme' ), '<em>' . $key . '</em>');
+				?>
 			</h3>
 		</div>
-		<div id="cat-list">
-			<ul class="list">
-				
+		<div>
+			<ul>
 				<?php
-					$key = get_search_query();
 					$args = array(
 							'posts_per_page' => 25,
 							's' => $key,
@@ -20,15 +21,30 @@
 					$search_query = new WP_Query($args);
 					
 					if(!$search_query->have_posts () || !$key || $key == ''){
-						echo '<li>Няма намерени резултати за вашето търсене</li>';
+						echo '<p>Няма намерени резултати за вашето търсене</p>';
 					}
-					else{
+					else {
 						while ( $search_query->have_posts () ){
 							$search_query->the_post ();
+							$post_ID =  get_the_ID();
+							$autor = "autor";
 				?>
-				<li><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+				<li class="container-top-20">
+						<header>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+								<h2><?php the_title(); ?></h2>
+							</a>
+						</header>
+							<div class="autor-date">
+								<span class="autor"><?php echo get_post_meta($post_ID, $autor, true); ?></span>
+								<span class="date"><?php  echo get_the_date('d F Y'); ?></span>
+							</div>
+							<div class="container-top-10">
+								<?php the_excerpt(); ?>
+							</div>
+				</li>
 				<?php
-						}//end-WHILE
+						}
 					wp_reset_postdata();
 				?>
 			</ul>
@@ -52,20 +68,19 @@
 							'add_fragment' => ''
 					);
 					echo paginate_links( $args );
-				}//end-IF
+				} //end-else
 				?>
 			</p>
 		</div>
 	</div>
 </div>
-	<!-- end CONTENT -->
-	<!-- start RIGHT-SIDEBAR -->
+	
 <aside id="sidebar-container">
 <?php
 	get_sidebar();
 ?>
 </aside>
-	<!-- end RIGHT-SIDEBAR -->
+	
 <?php
 get_footer ();
 ?>

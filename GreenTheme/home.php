@@ -2,7 +2,6 @@
 
 <div id="content">
 
-	<!-- start MAIN-NEWS section --> 
 	 <div class="container-top-20">
 		<article class="clearfix">
 			<?php
@@ -44,10 +43,7 @@
 			?>
 		</article>
 	</div>
-	<!-- end MAIN-NEWS section --> 
-	
-	<!-- start NEWS BOXES section --> 
-	
+
 	<div class="container-top-20 news-boxes">
 		<div class="category-title-right">
 			<h3>НОВИНИ</h3>
@@ -79,15 +75,9 @@
 			wp_reset_postdata();
 		?>
 	</div>
-	
-	<!-- end NEWS BOXES section --> 
-	
-	<!-- start NOTE section --> 
-	
+
 	<div class="container-top-20">
-	
-		<!-- start QUOTE section -->
-	
+
 		<div class="quote">
 			<article>
 				<?php
@@ -121,9 +111,6 @@
 			?>
 			</article>
 		</div>
-		<!-- end QUOTE section -->
-			
-		<!-- start ACCENT BOXES section -->
 	 
 		<div class="accent-boxes"> 
 			<div class="box">
@@ -206,16 +193,9 @@
 				?>
 			</div>
 		</div>
-		
-		<!-- end ACCENT BOXES section -->
-	
+
 	</div>
-	
-	<!-- end NOTE section --> 
-	
-	
-	<!-- start LIST OF NEWS section -->
-	
+
 	<div class="container-top-20 news-boxes">
 		<article>
 			<div class="category-title-right">
@@ -419,17 +399,14 @@
 		</article>
 	</div>
 	
-	
-	<!-- end LIST OF NEWS section -->
 </div>
-	<!-- end CONTENT -->
-	<!-- start RIGHT-SIDEBAR -->
+	
 <aside id="sidebar-container">
 <?php
 	get_sidebar();
 ?>
 </aside>
-	<!-- end RIGHT-SIDEBAR -->
+	
 <?php
 get_footer ();
 ?>
