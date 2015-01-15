@@ -24,7 +24,7 @@
 				<?php
 					$args = array(
 							'excerpt'           => get_the_content(),
-							'count'				=> 800,
+							'count'				=> 750,
 							'p_tag'				=>true
 					);
 					echo get_excerpt($args);

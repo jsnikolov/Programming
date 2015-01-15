@@ -17,8 +17,13 @@
 				<span class="autor"><?php echo get_post_meta($post_ID, $autor, true); ?></span>
 				<span class="date"><?php  echo get_the_date('d F Y'); ?></span>
 			</div>
-			<div class="container-top-10">
-				<?php the_content(); ?>
+			<div class="post-content container-top-10">
+				<?php 
+					$content = apply_filters( 'the_content', get_the_content() );
+					$content = str_replace( ']]>', ']]&gt;', $content );
+					$content = str_replace('&nbsp;', '', $content);
+					echo $content;
+				?>
 			</div>
 			<div id="fb-root"></div>
 			<div class="container-top-20 clearfix">

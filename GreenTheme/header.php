@@ -7,11 +7,11 @@
 <![endif]-->
 <html <?php language_attributes(); ?>>
 <head>
-	<title><?php wp_title( '|', true, 'right' ) . bloginfo('name'); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<title><?php wp_title( '|', true, 'right' ) . bloginfo('name'); ?></title>
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/dvatabuka.ico" />
 	<!--[if lt IE 9]>
-        <script src="<?php echo get_template_directory_uri();?>/script/IE9.js"></script>
+       <script src="<?php echo get_template_directory_uri();?>/script/IE9.js"></script>
     <![endif]-->
 <?php wp_head(); ?>
 </head>

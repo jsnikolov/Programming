@@ -8,17 +8,16 @@ function add_opengraph_doctype( $output ) {
 add_filter('language_attributes', 'add_opengraph_doctype', 10, 1);
 
 /**
- * Adding the Open Graph Meta Info 
+ * Adding the Open Graph and SEO Meta Info 
  */
 
 function add_meta_tags() {
 	$site_name = get_bloginfo('name');
+	$description = get_bloginfo('description');
 	$title = '';
 	$type = '';
 	$url = '';
-	$description = '';
 	$image = '';
-	$robots = 'index, follow';
 	$keywords = 'литература, разкази, поезия, проза, роман, книги, писатели, муза, автори, читалня, библиотека, книжарница, цитати, откъси, коментари, новини, култура, фейсбук, двата бука, dvatabuka';
 	
 	switch (true){
@@ -27,7 +26,6 @@ function add_meta_tags() {
 			$title = get_bloginfo('name');
 			$type = 'website';
 			$url = get_bloginfo('url');
-			$description = get_bloginfo('description');
 			$image = get_template_directory_uri() . '/images/fb-logo-dvata-buka.png';
 			break;
 		/* SINGLE */
@@ -84,21 +82,85 @@ function add_meta_tags() {
 			$image = get_template_directory_uri() . '/images/fb-logo-dvata-buka.png';
 			$keywords = '';
 		break;
+		/* PAGE */
+		case is_page() : 
+			$title = get_the_title() . ' | ' . get_bloginfo('name');
+			$type = 'page';
+			$url = get_permalink();
+				if (have_posts()): 
+					while(have_posts()): 
+						the_post(); 
+							$post_ID =  get_the_ID();
+							$content = get_the_content();
+							$args = array(
+									'excerpt'           => $content,
+									'count'				=> 400,
+									'read_more'      	=> '',
+									'end_string_format' => '...',
+									'p_tag'				=> false,
+									'cpecialchars'		=> true
+							);
+							$excerpt = get_excerpt($args);
+				endwhile;
+				endif;
+				
+			$description = $excerpt;
+			if(has_post_thumbnail( $post_ID )) {
+				$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post_ID ), 'medium' );
+				$image = esc_attr( $thumbnail[0] );
+			}
+			$post_tags = get_the_tags();
+			$list_of_tags = '';
+			if ($post_tags) {
+				foreach($post_tags as $tag) {
+					$list_of_tags .= $tag->name . ', ';
+				}
+			}
+			$list_of_tags .= 'двата бука, dvatabuka';
+			$keywords = $list_of_tags;
+		break;
+		/* TAGS */
+		case is_tag() : 
+			$title = single_tag_title('', false);
+			$type = 'tags';
+			$url = get_tag_link(get_term_by('slug',$title ,'post_tag')->term_id);
+			$image = '';
+			$description = 'Архив с етикет ' . $title;
+			$keywords = $title;
+		break;
+		case is_archive() :  
+				if ( is_day() ){
+					$date = get_the_date('d F Y');
+				}
+				elseif ( is_month() ){
+					$date = get_the_date('F Y');
+				}
+				elseif ( is_year() ){
+					$date = get_the_date('Y');
+				}
+			$title = 'Archive - ' . $date;
+			$type = 'archive';
+			$description = 'Архив - ' . $date;
+			$url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+			$image = '';
+			$robots = '<meta name="robots" content="noindex, follow" />';
+		break;
+		case is_404() :
+				echo '<meta name="description" content="404 not found" />';
+				return ;
+			break;
 		default :  
 			$title = 'Archive';
-			$type = 'archive';
+			$type = 'archive'; 
 			$url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-			$description = '';
-			$image = get_template_directory_uri() . '/images/fb-logo-dvata-buka.png';
-			$robots = 'noindex, follow';
-			$keywords = '';
+			$image = '';
+			$robots = '<meta name="robots" content="noindex, follow" />';
 		break;
 	
 	}
 	
-	$robots_meta_tags = '<meta name="description" content="' . $description . '" />
-						<meta name="keywords" content="'.$keywords.'" />
-						<meta name="robots" content="'.$robots .'" />';
+	$meta_tags = '<meta name="description" content="' . $description . '" />
+				  <meta name="keywords" content="'.$keywords.'" />';
 	
 	$fb_meta_tags =	'<meta property="og:site_name" content="' . $site_name . '"/>
 						<meta property="og:title" content="' . $title . '"/>
@@ -108,7 +170,16 @@ function add_meta_tags() {
 						<meta property="og:image" content="' . $image . '"/>
 						<meta property="fb:admins" content="1125466857"/>
 						<meta property="fb:app_id" content="[FB_APP_ID]" />';
-	echo $robots_meta_tags . $fb_meta_tags;
+	
+	if(is_home() || is_category() || is_tag() ){
+		echo '<link href="'.$url.'" rel="canonical">';
+	}
+	if(isset($robots)){
+		echo $robots . $meta_tags . $fb_meta_tags;
+	}
+	else{
+		echo $meta_tags . $fb_meta_tags;
+	}
 }
 add_action( 'wp_head', 'add_meta_tags' );
 
@@ -226,12 +297,11 @@ add_filter( 'img_caption_shortcode', 'my_img_caption_shortcode', 10, 3 );
  * Enqueue scripts and styles for the front end.
  */
 function greentheme_scripts_styles() {
-	wp_enqueue_script('jquery');
 	
 	// Loads JavaScript file with functionality specific to GreenTheme.
 	wp_enqueue_script( 'greentheme-analytics', get_template_directory_uri() . '/script/google-analytics.js');
-	wp_enqueue_script( 'greentheme-mCustomScrollbar', get_template_directory_uri() . '/script/jquery.mCustomScrollbar.concat.min.js');
-	wp_enqueue_script( 'greentheme-mScrollbar', get_template_directory_uri() . '/script/mScrollbar.js', array(), '', true );
+	wp_enqueue_script( 'greentheme-mCustomScrollbar', get_template_directory_uri() . '/script/jquery.mCustomScrollbar.concat.min.js', array('jquery'));
+	wp_enqueue_script( 'greentheme-mScrollbar', get_template_directory_uri() . '/script/mScrollbar.js', array('jquery'), '', true );
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'greentheme-style', get_stylesheet_uri() );

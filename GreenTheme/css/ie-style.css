@@ -1,7 +1,7 @@
 ﻿#header, #main, #footer {
     background:url(../images/IE/site-bg.png);
 }
-#nav, #content section.notes {
+#nav, #content .quote {
     background: url(../images/IE/nav-bg.png);
 }
 #nav > ul li > ul {
