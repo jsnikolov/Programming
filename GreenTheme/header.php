@@ -41,7 +41,7 @@
 						title="Двата бука"> <img
 						src="<?php echo get_template_directory_uri(); ?>/images/logo-dvata-buka.png"
 						width="195" height="110" alt="logo" />
-						<h1>Двата бука</h1>
+						<h1 id="site-name">Двата бука</h1>
 						<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</a>
 				</section>

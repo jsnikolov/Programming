@@ -448,8 +448,9 @@ body #wrapper #header>div #logo a {
 	display: block;
 }
 
-body #wrapper #header>div #logo a h1 {
-	display: none;
+#site-name {
+	position:absolute;
+	left:-999999px;
 }
 
 body #wrapper #header>div #logo a #site-description {
