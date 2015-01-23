@@ -40,10 +40,10 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 						title="Двата бука"> <img
 						src="<?php echo get_template_directory_uri(); ?>/images/logo-dvata-buka.png"
-						width="195" height="110" alt="logo" />
+						width="195" height="110" alt="Лого Двата бука" />
 						<h1 id="site-name">Двата бука</h1>
-						<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</a>
+					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</section>
 				<div id="fb-root"></div>
 				<div id="like-button-holder">

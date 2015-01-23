@@ -445,7 +445,7 @@ body #wrapper #header>div #logo {
 }
 
 body #wrapper #header>div #logo a {
-	display: block;
+	display: inline-block;
 }
 
 #site-name {
@@ -453,7 +453,7 @@ body #wrapper #header>div #logo a {
 	left:-999999px;
 }
 
-body #wrapper #header>div #logo a #site-description {
+#site-description {
 	font-size:14px;
 }
 
@@ -567,11 +567,12 @@ body #wrapper #footer {
 	position: relative;
 }
 
-#nav>ul li>ul>li.current-menu-item,#nav>ul li#nav>ul>li:hover {
+#nav>ul li#nav>ul>li:hover {
 	background: none;
 }
 
-#nav>ul li>ul>li:hover {
+#nav>ul li>ul>li:hover,
+#nav>ul li>ul>li.current-menu-item {
 	background: rgba(0, 0, 0, 0.2);
 }
 
@@ -594,6 +595,7 @@ body #wrapper #footer {
 }
 
 .current-menu-item,
+.current-menu-parent,
 #nav>ul>li:hover {
 	background: url(images/current-arrow.png) no-repeat center top;
 }
