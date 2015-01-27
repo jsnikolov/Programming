@@ -1,4 +1,32 @@
-﻿#header, #main, #footer {
+﻿.clearfix,
+.img-box,
+body #wrapper,
+body #wrapper #header,
+body #wrapper #header #nav,
+body #wrapper #main,
+body #wrapper #footer,
+#nav>ul,
+#content,
+#content article section,
+#content .news-boxes,
+#content .notes,
+#content .autor-date,
+#content .container-top-10,
+#content .container-top-20,
+#sidebar-container,
+#sidebar-container .container-top-15,
+div.search form,
+#footer div ul {
+	zoom: 1;
+}
+
+input {
+	*vertical-align: middle;
+}
+input[type="submit"] {
+	*overflow: visible;
+}
+#header, #main, #footer {
     background:url(../images/IE/site-bg.png);
 }
 #nav, #content .quote {
@@ -13,4 +41,10 @@
 }
 #nav > ul li > ul > li:hover {
     background: #626e13;
+}
+
+#footer div {
+	/** IE 7-8 */
+	*display: inline;
+	*zoom: 1;
 }

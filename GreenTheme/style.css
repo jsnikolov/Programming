@@ -1,6 +1,5 @@
-@CHARSET "UTF-8";
 /**
-* Theme Name:Green Theme
+*  Theme Name:Green Theme
 *  Theme URI: http://dvatabuka.eu
 *  Author: Joro Nikolov
 *  Author URI: http://dvatabuka.eu
@@ -9,7 +8,7 @@
 *  License: GNU General Public License v2 or later
 *  License URI: http://www.gnu.org/licenses/gpl-2.0.html
 *  Tags: green, two-columns, right-sidebar
-*  Text Domain: Dvata buka
+*  Text Domain: greentheme
 */
 
 .wp-caption{}
@@ -102,7 +101,6 @@ input {
 	font-family: sans-serif;
 	line-height: normal;
 	vertical-align: baseline;
-	*vertical-align: middle;
 }
 
 input[type="search"] {
@@ -112,14 +110,14 @@ input[type="search"] {
 	box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
 input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer;
-	*overflow: visible;
 }
 
 input::-moz-focus-inner {
@@ -143,27 +141,6 @@ ol {
 /*    ====================  CLASSES  =================    */
 
 /*    ====================  start CLEARFIX  =================    */
-.clearfix,
-.img-box,
-body #wrapper,
-body #wrapper #header,
-body #wrapper #header #nav,
-body #wrapper #main,
-body #wrapper #footer,
-#nav>ul,
-#content,
-#content article section,
-#content .news-boxes,
-#content .notes,
-#content .autor-date,
-#content .container-top-10,
-#content .container-top-20,
-#sidebar-container,
-#sidebar-container .container-top-15,
-div.search form,
-#footer div ul {
-	zoom: 1;
-}
 
 .clearfix:after,
 .img-box:after,
@@ -725,9 +702,6 @@ body #wrapper #footer {
 #footer div {
 	margin-top: 8px;
 	display: inline-block;
-	/** IE 7-8 */
-	*display: inline;
-	*zoom: 1;
 }
 #footer div ul li {
 	float: left;
