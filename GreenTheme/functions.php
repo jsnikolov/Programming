@@ -194,7 +194,7 @@ if ( ! isset( $content_width ) ) {
 
 if ( ! function_exists( 'greentheme_setup' ) ) :
 	function greentheme_setup() {
-		load_theme_textdomain( 'GreenTheme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'greentheme', get_template_directory() . '/languages' );
 		
 		/**
 		 * add_image_size
