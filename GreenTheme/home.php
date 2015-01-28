@@ -31,7 +31,7 @@
 					<?php 
 						$args = array(
 								'excerpt'           => get_the_content(),
-								'count'				=> 350,
+								'count'				=> 400,
 						);
 						echo get_excerpt($args); 
 					?>
@@ -44,7 +44,7 @@
 		</article>
 	</div>
 
-	<div class="container-top-20 news-boxes">
+	<div class="container-top-15 news-boxes">
 		<div class="category-title-right">
 			<h3>НОВИНИ</h3>
 		</div>
@@ -93,7 +93,7 @@
 						<h2><?php the_title(); ?></h2>
 					</a>
 				</header>
-				<div class="container-top-10">
+				<div class="container-top-5">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php if ( has_post_thumbnail() ) {
 									the_post_thumbnail('citat', array('class' => 'center'));

@@ -200,12 +200,12 @@ if ( ! function_exists( 'greentheme_setup' ) ) :
 		 * add_image_size
 		 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'main-news', 270, 200, true);
-		add_image_size( 'news', 185, 185, true);
-		add_image_size( 'category-main-news', 100, 100, true);
-		add_image_size( 'citat', 155, 126, true);
-		add_image_size( 'top-offer', 90, 140, true);
-	
+		add_image_size( 'main-news', 255, 204, true); // Ratio 5:4
+		add_image_size( 'citat', 150, 120, true); // Ratio 5:4
+		add_image_size( 'news', 185, 185, true); // Ratio 1:1
+		add_image_size( 'category-main-news', 100, 100, true); // Ratio 1:1
+		add_image_size( 'top-offer', 90, 140, true); // Ratio 9:14
+		add_image_size( 'korica', 180, 280, true); // Ratio 9:14
 		/**
 		 * register_nav_menu
 		 */
