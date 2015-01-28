@@ -10,3 +10,4 @@ Todo:
     Compressing http://dvatabuka.eu/…/plugins/wp-polls/polls-css.css?ver=2.68 could save 1.9KiB (73% reduction).
 	
 2. Снимка на цитата -> 155:126 -> 150:120 x 1.7 => Снимка на гл. новина -> 255:204
+	- class="quote" -> text-align:center;
