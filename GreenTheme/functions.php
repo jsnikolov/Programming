@@ -205,7 +205,7 @@ if ( ! function_exists( 'greentheme_setup' ) ) :
 		add_image_size( 'news', 185, 185, true); // Ratio 1:1
 		add_image_size( 'category-main-news', 100, 100, true); // Ratio 1:1
 		add_image_size( 'top-offer', 90, 140, true); // Ratio 9:14
-		add_image_size( 'korica', 180, 280, true); // Ratio 9:14
+		add_image_size( 'korica', 135, 210, true); // Ratio 9:14
 		/**
 		 * register_nav_menu
 		 */
@@ -301,7 +301,7 @@ function greentheme_scripts_styles() {
 	// Loads JavaScript file with functionality specific to GreenTheme.
 	wp_enqueue_script( 'greentheme-analytics', get_template_directory_uri() . '/script/google-analytics.js');
 	wp_enqueue_script( 'greentheme-mCustomScrollbar', get_template_directory_uri() . '/script/jquery.mCustomScrollbar.concat.min.js', array('jquery'));
-	wp_enqueue_script( 'greentheme-mScrollbar', get_template_directory_uri() . '/script/mScrollbar.js', array('jquery'), '', true );
+	wp_enqueue_script( 'greentheme-mScrollbar', get_template_directory_uri() . '/script/js-functions.js', array('jquery'), '', true );
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'greentheme-style', get_stylesheet_uri() );

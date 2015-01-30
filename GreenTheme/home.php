@@ -195,7 +195,33 @@
 		</div>
 
 	</div>
-
+	<div class="container-top-15 news-boxes">
+		<div class="category-title-right">
+			<h3>Горещи заглавия</h3>
+		</div>
+		<?php
+			$book_cover_query = new WP_Query( 'category_name=bookshop&posts_per_page=3' );
+			if ($book_cover_query->have_posts ()) :
+			while ( $book_cover_query->have_posts () ) :
+			$book_cover_query->the_post ();
+		?>
+		<article class="container-top-10">
+			<div class="book-cover-container">
+				<a class="book-cover" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php if ( has_post_thumbnail() ){
+								the_post_thumbnail('korica', array('class' => 'aligncenter'));
+							}
+					?>
+					<h2 class="cover-title"><?php the_title(); ?></h2>
+				</a>
+			</div>
+		</article>
+		<?php
+			endwhile;
+			endif;
+			wp_reset_postdata();
+		?> 
+	</div>
 	<div class="container-top-20 news-boxes">
 		<article>
 			<div class="category-title-right">

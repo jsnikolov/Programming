@@ -326,6 +326,25 @@ img.wp-post-image {
 .news-boxes article:last-child {
 	margin-right: 0px;
 }
+.book-cover-container{
+	text-align:center;
+}
+.book-cover{
+		display:inline-block;
+		position:relative;
+		overflow:hidden;
+	}
+.cover-title {
+	width:100%;
+	position:absolute;
+	left:0;
+	box-sizing:border-box;
+	background:rgba(0, 0, 0, .7);
+	text-align:center;
+	padding:3px;
+	color:#c1d825;
+	font-size:1.6em;
+}
 /*    ====================  end NEWS-BOXES  =================    */
 
 /*    ====================  CONTAINER, TEXT-ALIGN, TITLE, SUB-TITLE and TAGCLOUD classes =================    */
