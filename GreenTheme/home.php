@@ -323,6 +323,12 @@
 			</ul>
 		</article>
 	</div>
+	
+	
+	<?php if(!dynamic_sidebar('ads-at-home')):?>
+	<?php endif;?>
+	
+	
 	<div class="container-top-20 news-boxes">
 		<article>
 			<div class="category-title-right">
