@@ -18,6 +18,10 @@
 .bypostauthor css{}
 
 @font-face {
+  font-family: 'Comic-db';
+  src: url('fonts/comic.ttf')  format('truetype');
+}
+@font-face {
   font-family: 'Candara-db';
   src: url('fonts/CANDARA.TTF')  format('truetype');
 }
@@ -402,6 +406,15 @@ img.wp-post-image {
 	display:inline-block;
 	float:right;
 }
+.home-ads div, .footer-ads div{
+	margin:0 auto;
+}
+.home-ads div{
+	max-width:600px;
+}
+.footer-ads div{
+	max-width:728px;
+}
 /*    ====================  end CLASSES  =================    */
 
 /*    ====================  start BODY  =================    */
@@ -416,6 +429,7 @@ body {
 	font: normal 62.5%/20px Tahoma, Verdana, Arial, sans-serif;
 	color: #dadada;
 	background: #c1d825 url(images/body-background.jpg) no-repeat center -20px fixed;
+	background-size: cover;
 }
 
 body #wrapper {
@@ -436,12 +450,30 @@ body #wrapper #header>div {
 }
 
 body #wrapper #header>div #logo {
+	width:40%;
 	height: 110px;
 	margin-top:-10px;
+	float:left;
 }
 
 body #wrapper #header>div #logo a {
 	display: inline-block;
+}
+
+body #wrapper #header>div #header-ads {
+	width:60%;
+	float:left;
+}
+
+body #wrapper #header>div #header-ads>div {
+	margin:0 auto;
+}
+
+
+body #wrapper #header>div #social {
+	width:20%;
+	height: 110px;
+	float:left;
 }
 
 #site-name {
@@ -450,7 +482,10 @@ body #wrapper #header>div #logo a {
 }
 
 #site-description {
+	margin-top:-11px;
+	padding-left:25px;
 	font-size:14px;
+	position:absolute;
 }
 
 body #wrapper #header>div #search {
@@ -534,7 +569,7 @@ body #wrapper #footer {
 
 #nav>ul li {
 	font-size: 2.2em;
-	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-family: 'Comic-db', cursive, sans-serif;
 	float: left;
 }
 

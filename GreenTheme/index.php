@@ -36,6 +36,10 @@
 		endwhile;
 		endif;
 	?>
+	
+	<?php if(!dynamic_sidebar('ads-at-home')):?>
+	<?php endif;?>
+	
 	</article>
 </div><!-- #content -->
 

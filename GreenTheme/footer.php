@@ -1,11 +1,15 @@
 </div><!-- #main -->
+	
+	<?php if(!dynamic_sidebar('ads-at-footer')):?>
+	<?php endif;?>
+	
 <footer id="footer">
 	<div>
 		<ul>
 		<?php
 			$args=array(
 				'post_type'=>'page',
-				'pagename' => 'за-нас',
+				'pagename' => 'about-us',
 			);
 		
 			$the_page_query = new WP_Query($args);

@@ -35,7 +35,7 @@
 	</script>
 	<div id="wrapper">
 		<header id="header">
-			<div>
+			<div class="clearfix">
 				<section id="logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 						title="Двата бука"> <img
@@ -43,19 +43,21 @@
 						width="195" height="110" alt="Лого Двата бука" />
 						<h1 id="site-name">Двата бука</h1>
 					</a>
-					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</section>
-				<div id="fb-root"></div>
-				<div id="like-button-holder">
-					<div class="fb-like" data-href="https://www.facebook.com/dvatabuka" data-layout="button" data-colorscheme="dark" data-share="false" data-width="450" data-show-faces="false"></div>
-				</div>
-				<div id="search" class="search">
-					<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-						<input class="SearchBox" type="search" name="s" placeholder="Търсене..." /> <input
-							class="SearchButton" type="submit" value="" />
-					</form>
-				</div>
+				
+				
+					<?php if(!dynamic_sidebar('ads-at-header')):?>
+					<?php endif;?>
+				
+
+					<div id="search" class="search">
+						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+							<input class="SearchBox" type="search" name="s" placeholder="Търсене..." /> <input
+								class="SearchButton" type="submit" value="" />
+						</form>
+					</div>
 			</div>
+			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<nav id="nav">
 				<?php
 					wp_nav_menu ( array (

@@ -222,7 +222,7 @@ add_action( 'after_setup_theme', 'greentheme_setup' );
  * register_sidebar
  */
 function greentheme_widgets_init() {
-
+	
 	register_sidebar(array(
 	'name' => __( 'Right Sidebar', 'Green Theme' ),
 	'id' => 'right-sidebar',
@@ -231,6 +231,46 @@ function greentheme_widgets_init() {
 	'after_widget'  => '</div></div>',
 	'before_title'  => '<div class="category-title-right"><h3>',
 	'after_title'   => '</h3></div><div class="list">',
+	));
+	
+	register_sidebar(array(
+	'name' => __( 'Ads at header', 'Green Theme' ),
+	'id' => 'ads-at-header',
+	'description' => __( 'Ads at header.', 'Green Theme'),
+	'before_widget' => '<div id="header-ads"><div>',
+	'after_widget'  => '</div></div>',
+	'before_title'  => '',
+	'after_title'   => '',
+	));
+
+	register_sidebar(array(
+	'name' => __( 'Ads at home', 'Green Theme' ),
+	'id' => 'ads-at-home',
+	'description' => __( 'Ads at home page.', 'Green Theme'),
+	'before_widget' => '<div class="container-top-20 home-ads"><div>',
+	'after_widget'  => '</div></div>',
+	'before_title'  => '',
+	'after_title'   => '',
+	));
+	
+	register_sidebar(array(
+	'name' => __( 'Ads at Right Sidebar', 'Green Theme' ),
+	'id' => 'ads-right-sidebar',
+	'description' => __( 'Ads at right side.', 'Green Theme'),
+	'before_widget' => '<div class="container-top-15">',
+	'after_widget'  => '</div>',
+	'before_title'  => '',
+	'after_title'   => '',
+	));
+
+	register_sidebar(array(
+	'name' => __( 'Ads at footer', 'Green Theme' ),
+	'id' => 'ads-at-footer',
+	'description' => __( 'Ads at footer.', 'Green Theme'),
+	'before_widget' => '<div class="container-top-20 footer-ads"><div>',
+	'after_widget'  => '</div></div>',
+	'before_title'  => '',
+	'after_title'   => '',
 	));
 }
 add_action( 'widgets_init', 'greentheme_widgets_init' );

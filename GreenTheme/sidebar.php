@@ -37,5 +37,7 @@
 		</div>
 	</div>
 	<?php if(!dynamic_sidebar('right-sidebar')):?>
-		
+	<?php endif;?>
+	
+	<?php if(!dynamic_sidebar('ads-right-sidebar')):?>
 	<?php endif;?>
